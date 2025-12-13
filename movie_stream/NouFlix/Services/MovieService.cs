@@ -16,7 +16,7 @@ public class MovieService(
     IUnitOfWork uow,
     MinioObjectStorage storage,
     IAppCache cache,
-    IHttpContextAccessor accessor)
+    IHttpContextAccessor accessor) : IMovieService
 {
     private readonly MovieSimWeights _w = new();
     

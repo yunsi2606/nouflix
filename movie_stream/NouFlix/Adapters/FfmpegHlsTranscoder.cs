@@ -14,7 +14,7 @@ using NouFlix.Services.Interface;
 namespace NouFlix.Adapters;
 
 public class FfmpegHlsTranscoder(
-    MinioObjectStorage storage,
+    IMinioObjectStorage storage,
     IStatusStorage<TranscodeDto.TranscodeStatus> transStatus,
     IStatusStorage<SubtitleDto.SubtitleStatus> subStatus,
     IUnitOfWork uow,

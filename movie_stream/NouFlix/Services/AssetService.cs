@@ -13,7 +13,7 @@ namespace NouFlix.Services;
 
 public class AssetService(
     IUnitOfWork uow,
-    MinioObjectStorage storage,
+    IMinioObjectStorage storage,
     IOptions<StorageOptions> opt
     )
 {

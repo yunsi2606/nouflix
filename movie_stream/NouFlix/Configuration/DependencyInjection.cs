@@ -102,12 +102,12 @@ public static class DependencyInjection
         services.AddScoped<ViewCounter>();
         
         // Services
-        services.AddScoped<MinioObjectStorage>();
-        services.AddScoped<AuthService>();
-        services.AddScoped<UserService>();
+        services.AddScoped<IMinioObjectStorage, MinioObjectStorage>();
+        services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IUserService, UserService>();
         services.AddScoped<AccessService>();
         services.AddScoped<StreamService>();
-        services.AddScoped<MovieService>();
+        services.AddScoped<IMovieService, MovieService>();
         services.AddScoped<SeasonService>();
         services.AddScoped<ExternalAuth>();
         services.AddScoped<FfmpegHlsTranscoder>();
@@ -120,7 +120,7 @@ public static class DependencyInjection
         services.AddScoped<BulkEpisodesService>();
         services.AddScoped<DashboardService>();
         services.AddScoped<LogService>();
-        services.AddScoped<SubscriptionService>();
+        services.AddScoped<ISubscriptionService, SubscriptionService>();
         services.AddScoped<PaymentGatewayFactory>();
         services.AddHttpClient<IPaymentGateway, MomoPaymentGateway>();
         services.AddHttpClient<IPaymentGateway, StripePaymentGateway>();

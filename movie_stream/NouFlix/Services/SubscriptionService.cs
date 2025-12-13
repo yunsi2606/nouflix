@@ -1,12 +1,12 @@
-using Microsoft.EntityFrameworkCore;
 using NouFlix.DTOs;
 using NouFlix.Models.Entities;
 using NouFlix.Persistence.Repositories.Interfaces;
+using NouFlix.Services.Interface;
 using NouFlix.Services.Payment;
 
 namespace NouFlix.Services;
 
-public class SubscriptionService(IUnitOfWork uow, PaymentGatewayFactory paymentFactory)
+public class SubscriptionService(IUnitOfWork uow, PaymentGatewayFactory paymentFactory) : ISubscriptionService
 {
     public async Task<IEnumerable<SubscriptionDtos.PlanDto>> GetPlans(CancellationToken ct = default)
     {

@@ -8,7 +8,7 @@ public static class ReviewMapper
 {
     public static async Task<ReviewRes> ToReviewResAsync(
         this Review r,
-        MinioObjectStorage storage,
+        IMinioObjectStorage storage,
         CancellationToken ct = default)
     {
         var img = r.User.Profile.Avatar;

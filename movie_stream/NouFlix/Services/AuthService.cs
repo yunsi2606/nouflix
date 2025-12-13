@@ -10,6 +10,7 @@ using NouFlix.Models.Common;
 using NouFlix.Models.Entities;
 using NouFlix.Models.ValueObject;
 using NouFlix.Persistence.Repositories.Interfaces;
+using NouFlix.Services.Interface;
 using Serilog;
 
 namespace NouFlix.Services;
@@ -17,9 +18,9 @@ namespace NouFlix.Services;
 public class AuthService(
     IConfiguration configuration,
     IHttpContextAccessor accessor,
-    MinioObjectStorage storage,
+    IMinioObjectStorage storage,
     IUnitOfWork uow
-    )
+    ) : IAuthService
 {
     private readonly Serilog.ILogger _logger = Log.ForContext<AuthService>();
 

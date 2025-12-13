@@ -6,7 +6,7 @@ using NouFlix.Models.Specification;
 
 namespace NouFlix.Services;
 
-public class MinioObjectStorage
+public class MinioObjectStorage : IMinioObjectStorage
 {
     private readonly IMinioClient _client;
     private readonly IMinioClient _publicSigner;

@@ -162,7 +162,6 @@ services:
         condition: service_healthy
       elasticsearch:
         condition: service_healthy
-    # Không cần expose port khi dùng Tunnel
     mem_limit: 3g
     mem_reservation: 1g
     cpus: 2.0

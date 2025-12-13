@@ -12,7 +12,7 @@ namespace NouFlix.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 public class SubtitleController(
-    MinioObjectStorage storage,
+    IMinioObjectStorage storage,
     IQueue<SubtitleDto.SubtitleJob> queue,
     IStatusStorage<SubtitleDto.SubtitleStatus> status,
     IOptions<StorageOptions> opt,

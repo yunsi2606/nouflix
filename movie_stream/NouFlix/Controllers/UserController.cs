@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NouFlix.DTOs;
 using NouFlix.Models.Common;
-using NouFlix.Services;
+using NouFlix.Services.Interface;
 
 namespace NouFlix.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UserController(UserService svc) : Controller
+public class UserController(IUserService svc) : Controller
 {
     [HttpGet("history")]
     [Authorize]

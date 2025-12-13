@@ -8,7 +8,7 @@ public static class UserMapper
 {
     public static async Task<UserDto.UserRes> ToUserResAsync(
         this User u,
-        MinioObjectStorage storage,
+        IMinioObjectStorage storage,
         CancellationToken ct)
     {
         var img = u.Profile.Avatar;

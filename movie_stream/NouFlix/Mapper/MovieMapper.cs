@@ -9,7 +9,7 @@ public static class MovieMapper
 {
     public static async Task<MovieRes> ToMovieResAsync(
         this Movie m,
-        MinioObjectStorage storage,
+        IMinioObjectStorage storage,
         CancellationToken ct = default)
     {
         var img = m.Images?.OrderBy(i => i.Id).FirstOrDefault(i => i.Kind == ImageKind.Poster);

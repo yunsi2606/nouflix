@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NouFlix.DTOs;
 using NouFlix.Models.Common;
-using NouFlix.Services;
+using NouFlix.Services.Interface;
 
 namespace NouFlix.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class MovieController(MovieService svc) : Controller
+public class MovieController(IMovieService svc) : Controller
 {
     [HttpGet("search")]
     [AllowAnonymous]

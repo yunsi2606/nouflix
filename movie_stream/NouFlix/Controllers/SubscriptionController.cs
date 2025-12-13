@@ -5,13 +5,13 @@ using NouFlix.DTOs;
 using NouFlix.Models.Common;
 using NouFlix.Models.Entities;
 using NouFlix.Persistence.Repositories.Interfaces;
-using NouFlix.Services;
+using NouFlix.Services.Interface;
 
 namespace NouFlix.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class SubscriptionController(SubscriptionService service, IUnitOfWork uow) : ControllerBase
+public class SubscriptionController(ISubscriptionService service, IUnitOfWork uow) : ControllerBase
 {
     [HttpGet("plans")]
     public async Task<IActionResult> GetPlans(CancellationToken ct)

@@ -9,13 +9,14 @@ using NouFlix.Models.Entities;
 using NouFlix.Models.Specification;
 using NouFlix.Models.ValueObject;
 using NouFlix.Persistence.Repositories.Interfaces;
+using NouFlix.Services.Interface;
 
 namespace NouFlix.Services;
 
 public class UserService(
     IUnitOfWork uow,
     MinioObjectStorage storage,
-    IOptions<StorageOptions> opt)
+    IOptions<StorageOptions> opt) : IUserService
 {
     private const long MaxSize = 5 * 1024 * 1024;
     

@@ -8,7 +8,7 @@ public static class ImageAssetMapper
 {
     public static async Task<AssetsDto.ImageAssetRes> ToImageAssetResAsync(
         this ImageAsset ia,
-        MinioObjectStorage storage,
+        IMinioObjectStorage storage,
         CancellationToken ct = default)
     {
         var posterUrl = (await storage.GetReadSignedUrlAsync(
@@ -19,7 +19,7 @@ public static class ImageAssetMapper
     
     public static Task<AssetsDto.ImageAssetRes[]> ToImageAssetResListAsync(
         this IEnumerable<ImageAsset> assets,
-        MinioObjectStorage storage,
+        IMinioObjectStorage storage,
         CancellationToken ct = default)
         => Task.WhenAll(assets.Select(s => ToImageAssetResAsync(s, storage, ct)).ToArray());
 }
